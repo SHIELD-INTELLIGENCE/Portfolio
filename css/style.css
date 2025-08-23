@@ -383,7 +383,9 @@ h1 {
     right: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: #111;
+    background-color: #111 !important;
+    opacity: 1 !important;
+    pointer-events: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -392,10 +394,14 @@ h1 {
     transition: right 0.3s ease;
     border-top: 2px solid #1e1e1e;
     box-shadow: 0 5px 15px rgba(0, 250, 255, 0.2);
+    z-index: 9999;
   }
 
   .nav-links.active {
     right: 0;
+    opacity: 1 !important;
+    pointer-events: auto;
+    background-color: #111 !important;
   }
 
   .nav-links li {
@@ -471,6 +477,14 @@ h1 {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 0 10px;
+  }
+
+  .division {
+    margin-bottom: 30px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    background: #181818;
+    box-shadow: 0 2px 8px #00faff22;
   }
 
   /* New CSS to fix the typewriter effect on small screens */

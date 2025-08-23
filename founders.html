@@ -13,6 +13,27 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+          navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+              menuToggle.classList.remove('active');
+              navLinks.classList.remove('active');
+            }
+          });
+          document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+              menuToggle.classList.remove('active');
+              navLinks.classList.remove('active');
+            }
+          });
+        }
       });
   </script>
 
@@ -48,31 +69,6 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
 
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    navLinks.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 </html>
