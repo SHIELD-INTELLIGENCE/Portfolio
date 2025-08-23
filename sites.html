@@ -12,26 +12,14 @@
     <style></style>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="logo">S.H.I.E.L.D</h1>
-        <div class="menu-toggle" id="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <nav>
-          <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="divisions.html">Divisions</a></li>
-            <li><a href="founders.html">Founders</a></li>
-            <li><a href="sites.html" class="active">Deployed Sites</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div id="header"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+        });
+    </script>
     <h1>S.H.I.E.L.D Deployed Sites</h1>
     <div class="site-grid">
       <div class="site-card">
