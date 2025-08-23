@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About SHIELD</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+
+  <section class="page-content">
+    <div class="container">
+      <h2>About SHIELD</h2>
+      <p>
+        <strong>SHIELD (Students Hub for Intelligence, Elegance, Learning and Defence)</strong> is a global initiative forged to confront evolving threats through foresight, action, and integrity. We are more than an organization—we are a commitment to the future.
+      </p>
+      <p>
+        Founded and directed by <strong>Reyansh Raj Mishra</strong> and <strong>Akshit Pandey</strong>, SHIELD bridges elite intelligence, private security, humanitarian strategy, and tactical innovation to secure tomorrow’s world—today.
+      </p> 
+      <p>
+        From cyber defense to strategic reconnaissance, SHIELD operates with precision, discipline, and discretion. Our agents don’t wear capes—they operate silently, effectively, and ethically across continents.
+      </p>
+      <p>
+        From cyber defense to strategic reconnaissance, SHIELD operates with precision, discipline, and discretion. Our agents don’t wear capes—they operate silently, effectively, and ethically across continents.
+      </p>
+      <p>        We are the unseen guardians, the silent sentinels, and the strategic minds who ensure that threats are neutralized before they escalate. Our mission is to protect peace, not power.
+        We believe peace is earned—not promised. Our mission is to identify vulnerabilities before they become crises and act where others hesitate.
+      </p>
+      <p>
+        SHIELD is built on the principle that information, discipline, and sacrifice can outmaneuver any threat. We are the line between chaos and order. This is our legacy.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 SHIELD Intelligence. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
+

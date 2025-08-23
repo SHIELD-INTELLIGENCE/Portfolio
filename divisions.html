@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHIELD Divisions</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">S.H.I.E.L.D</h1>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="divisions.html" class="active">Divisions</a></li>
+            <li><a href="founders.html">Founders</a></li>
+            <li><a href="sites.html">Deployed Sites</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-content">
+      <div class="container">
+        <h2>Divisions</h2>
+
+        <div class="division">
+          <h3>HYDRA</h3>
+          <p>
+            <strong>HYDRA (Hybrid Yield Division for Recon & Assault)</strong>
+            is SHIELD’s most elite and classified black-ops unit. Trained for
+            tactical superiority, HYDRA operates silently behind enemy lines —
+            neutralizing high-level threats, dismantling corrupt systems, and
+            enforcing global stability.
+          </p>
+          <p>Comprised of hand-picked agents, HYDRA specializes in:</p>
+          <ul>
+            <li>Advanced Reconnaissance & Surveillance</li>
+            <li>Crisis Neutralization</li>
+            <li>Cyber-Strike and Information Warfare</li>
+            <li>Covert Intelligence Extraction</li>
+          </ul>
+          <p><em>Motto: “Protecting Humanity at Any Cost.”</em></p>
+        </div>
+
+        <div class="division">
+          <h3>CERBERUS (Coming Soon)</h3>
+          <p>
+            SHIELD's future defense AI division, CERBERUS will integrate quantum
+            AI with tactical systems to autonomously counter cyber-terrorism, AI
+            manipulation, and emerging digital threats.
+          </p>
+        </div>
+
+        <div class="division">
+          <h3>PHOENIX (Coming Soon)</h3>
+          <p>
+            A planned humanitarian division to rebuild war-torn areas, train
+            local security, and support global recovery — backed by SHIELD’s
+            intelligence muscle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 SHIELD Intelligence. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founders</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">S.H.I.E.L.D</h1>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="divisions.html">Divisions</a></li>
+          <li><a href="founders.html" class="active">Founders</a></li>
+          <li><a href="sites.html">Deployed Sites</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-content">
+    <div class="container">
+      <h2>Founders</h2>
+
+      <div class="founder">
+        <h3>Reyansh Raj Mishra</h3>
+        <p>
+          Visionary. Strategist. Guardian of Legacy.<br />
+          Reyansh is the mastermind behind SHIELD’s doctrine — blending ancient wisdom, tactical foresight, and ruthless discipline. He built SHIELD not as a company, but as a destiny. Every operation traces back to his mind.
+        </p>
+      </div>
+
+      <div class="founder">
+        <h3>Akshit Pandey</h3>
+        <p>
+          Architect. Operative. Force of Execution.<br />
+          Akshit is the co-founder and equal bearer of SHIELD’s mission. Grounded, fearless, and lethal when necessary — he commands field ops, data systems, and direct intel networks. No mission moves without his approval.
+        </p>
+      </div>
+
+      <p class="note">
+        Together, they are not CEO and deputy — they are two halves of a singular force. No hierarchy. No ego. Only SHIELD.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 SHIELD Intelligence. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHIELD | Strategic Intelligence Division</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+        });
+    </script>
+
+    <section class="hero">
+      <div class="hero-content">
+<h2 class="typewriter">
+  <span class="typewriter-text">Securing Tomorrow with Strategic Intelligence</span>
+</h2>
+        <p>
+          SHIELD is not an organization. It is a conviction — a silent force
+          standing between chaos and order.
+        </p>
+        <a href="about.html" class="cta-button">Explore Our Mission</a>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="container">
+        <h3>Global Vigilance. Tactical Precision.</h3>
+        <p>
+          From real-time cyber intervention to boots-on-ground intelligence,
+          SHIELD neutralizes threats before headlines are made. Whether the
+          threat is digital, political, or psychological — SHIELD responds with
+          discipline and discretion.
+        </p>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <h3>Core Values</h3>
+        <ul>
+          <li>
+            <strong>Discipline:</strong> Every operation begins with the self.
+          </li>
+          <li><strong>Secrecy:</strong> Visibility is vulnerability.</li>
+          <li><strong>Loyalty:</strong> Brotherhood above bureaucracy.</li>
+          <li>
+            <strong>Justice:</strong> For all, regardless of borders or
+            bloodlines.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 SHIELD Intelligence. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+    </script>
+  </body>
+</html>
