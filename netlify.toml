@@ -7,7 +7,7 @@ redirects = []
   [functions."*"]
 
 [build]
-publish = "C:\\Reyansh\\SHIELD_Site_Final_Zip"
+publish = "/"
 publishOrigin = "default"
 
   [build.environment]
